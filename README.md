@@ -1,3 +1,13 @@
+### Note
+```text
+This is a fork of 
+https://github.com/katzer/cordova-plugin-background-mode
+trying to fix the app crashes.
+
+Add plugin:
+cordova plugin add https://github.com/mcrio/cordova-plugin-background-mode
+``` 
+================
 
 <p align="left">
     <b><a href="https://github.com/katzer/cordova-plugin-background-mode/tree/example">SAMPLE APP</a> :point_right:</b>
