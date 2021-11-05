@@ -73,6 +73,7 @@ public class BackgroundMode extends CordovaPlugin {
         @Override
         public void onServiceDisconnected (ComponentName name)
         {
+            BackgroundMode.this.service = null;
             fireEvent(Event.FAILURE, "'service disconnected'");
         }
     };
@@ -264,8 +265,14 @@ public class BackgroundMode extends CordovaPlugin {
         if (!isBind) return;
 
         fireEvent(Event.DEACTIVATE, null);
-        context.unbindService(connection);
-        context.stopService(intent);
+
+        if (context != null) {
+            if (service != null) {
+                context.unbindService(connection);
+            }
+            context.stopService(intent);
+        }
+
 
         isBind = false;
     }
